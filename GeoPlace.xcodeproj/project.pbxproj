@@ -13,6 +13,7 @@
 		D7D2B662236F3FCF0022F610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D2B660236F3FCF0022F610 /* Main.storyboard */; };
 		D7D2B664236F3FD10022F610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D2B663236F3FD10022F610 /* Assets.xcassets */; };
 		D7D2B667236F3FD10022F610 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D2B665236F3FD10022F610 /* LaunchScreen.storyboard */; };
+		D7D2B66F2370A9E20022F610 /* OwnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D2B66E2370A9E20022F610 /* OwnTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D7D2B663236F3FD10022F610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7D2B666236F3FD10022F610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7D2B668236F3FD10022F610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D2B66E2370A9E20022F610 /* OwnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D7D2B65A236F3FCF0022F610 /* AppDelegate.swift */,
 				D7D2B65C236F3FCF0022F610 /* SceneDelegate.swift */,
 				D7D2B65E236F3FCF0022F610 /* ViewController.swift */,
+				D7D2B66E2370A9E20022F610 /* OwnTableViewCell.swift */,
 				D7D2B660236F3FCF0022F610 /* Main.storyboard */,
 				D7D2B663236F3FD10022F610 /* Assets.xcassets */,
 				D7D2B665236F3FD10022F610 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D2B66F2370A9E20022F610 /* OwnTableViewCell.swift in Sources */,
 				D7D2B65F236F3FCF0022F610 /* ViewController.swift in Sources */,
 				D7D2B65B236F3FCF0022F610 /* AppDelegate.swift in Sources */,
 				D7D2B65D236F3FCF0022F610 /* SceneDelegate.swift in Sources */,
