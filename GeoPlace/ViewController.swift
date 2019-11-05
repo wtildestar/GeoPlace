@@ -39,12 +39,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-    
-    // MARK: - Table view delegate
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
+
+     @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 
 }
 
