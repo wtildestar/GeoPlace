@@ -61,9 +61,6 @@ class NewPlaceViewController: UITableViewController {
             view.endEditing(true)
         }
     }
-    
-    
-
 }
 
 
@@ -85,9 +82,7 @@ extension NewPlaceViewController: UITextFieldDelegate {
     }
     
     func saveNewPlace() {
-        
-        
-        
+
         var image: UIImage?
         // Пишем условие на ImagePlaceholder если пользователь (не)установил изображение
         if imageIsChanged {
@@ -101,9 +96,7 @@ extension NewPlaceViewController: UITextFieldDelegate {
         let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData)
         
         StorageManager.saveObject(newPlace)
-    
 
-    
 }
 
     @IBAction func cancelAction(_ sender: Any) {
@@ -135,6 +128,5 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
         imageIsChanged = true
         
         dismiss(animated: true)
-        
     }
 }
