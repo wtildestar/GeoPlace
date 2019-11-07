@@ -19,12 +19,12 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet weak var placeType: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Скрываем остальные пустые ячейки футера tableView за счет UIView()
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         // Проверяем поле placeName на редактирование изменяя кнопку "Сохранить" с enabled на disabled через расширение типа UITextFieldDelegate
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        
     }
     
     
@@ -82,7 +82,7 @@ extension NewPlaceViewController: UITextFieldDelegate {
     }
     
     func saveNewPlace() {
-
+        
         var image: UIImage?
         // Пишем условие на ImagePlaceholder если пользователь (не)установил изображение
         if imageIsChanged {
@@ -93,16 +93,21 @@ extension NewPlaceViewController: UITextFieldDelegate {
         
         let imageData = image?.pngData()
         
-        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData)
-        
+        let newPlace = Place(name: placeName.text!,
+                             location: placeLocation.text,
+                             type: placeType.text,
+                             imageData: imageData)
         StorageManager.saveObject(newPlace)
-
-}
-
-    @IBAction func cancelAction(_ sender: Any) {
-        dismiss(animated: true)
     }
     
+  @IBAction func cancelAction(_ sender: Any) {
+      dismiss(animated: true)
+  }
+    
+}
+
+
+
 // MARK: Work with image
 extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
@@ -128,5 +133,6 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
         imageIsChanged = true
         
         dismiss(animated: true)
+        
     }
 }
