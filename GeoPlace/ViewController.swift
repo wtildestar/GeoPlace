@@ -45,16 +45,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     // MARK: Table view delegate
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let place = places[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
+        let contextItem = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
             StorageManager.deleteObject(place)
-            // Удалим саму строку после удаления объекта
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
         
-        return [deleteAction]
-        
+        return swipeActions
     }
     
      @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
