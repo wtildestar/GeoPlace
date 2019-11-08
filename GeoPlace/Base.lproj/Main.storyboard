@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bHN-kV-ngN">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KiC-qM-EBf" customClass="OwnTableViewCell" customModule="GeoPlace" customModuleProvider="target">
@@ -71,6 +71,7 @@
                                             <outlet property="locationLabel" destination="Zeu-AE-Ubh" id="qAa-AO-vpY"/>
                                             <outlet property="nameLabel" destination="5W9-07-hOk" id="Mmv-MG-4SR"/>
                                             <outlet property="typeLabel" destination="VMa-s7-fgq" id="GFt-8p-coU"/>
+                                            <segue destination="DVM-cP-Xcf" kind="show" identifier="showDetail" id="FIW-aX-Zpo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,19 +80,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gVp-oJ-Abq"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="d3k-8a-Gg7">
+                                <rect key="frame" x="0.0" y="44" width="375" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="По дате"/>
+                                    <segment title="По имени"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="BYZ-38-t0r" eventType="valueChanged" id="y3i-Jc-6hx"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="bHN-kV-ngN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Hl-fJ-C5z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bHN-kV-ngN" secondAttribute="trailing" id="9Q3-He-qHt"/>
-                            <constraint firstItem="bHN-kV-ngN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dqf-Ot-XTx"/>
-                            <constraint firstItem="bHN-kV-ngN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VHm-xS-Sgu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bHN-kV-ngN" secondAttribute="trailing" id="b7v-Hu-8ge"/>
-                            <constraint firstItem="bHN-kV-ngN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yjN-9I-XsU"/>
+                            <constraint firstItem="bHN-kV-ngN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ALo-lc-7YF"/>
+                            <constraint firstItem="bHN-kV-ngN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="E0O-WQ-IVk"/>
+                            <constraint firstItem="bHN-kV-ngN" firstAttribute="top" secondItem="d3k-8a-Gg7" secondAttribute="bottom" constant="1" id="jKp-jy-e00"/>
+                            <constraint firstItem="bHN-kV-ngN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zPS-UF-dBZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="GeoPlace" id="gQg-fP-sJH">
+                    <navigationItem key="navigationItem" title="GeoPlace" largeTitleDisplayMode="never" id="gQg-fP-sJH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="sorting-down" id="cPS-lI-r3l">
+                            <inset key="largeContentSizeImageInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <action selector="reversedSorting:" destination="BYZ-38-t0r" id="xsg-pF-Pow"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sYD-Vg-XZp">
                             <connections>
                                 <segue destination="TUs-Ue-daf" kind="presentation" modalTransitionStyle="coverVertical" id="P46-Al-j6Q"/>
@@ -99,19 +115,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reversedSortingButton" destination="cPS-lI-r3l" id="uJb-p5-Obn"/>
+                        <outlet property="segmentedControl" destination="d3k-8a-Gg7" id="YoT-f9-IRV"/>
                         <outlet property="tableView" destination="bHN-kV-ngN" id="okB-Bk-hWq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="107"/>
+            <point key="canvasLocation" x="816.79999999999995" y="106.59670164917542"/>
         </scene>
         <!--Новое место-->
         <scene sceneID="ErB-ka-KTr">
             <objects>
                 <tableViewController id="DVM-cP-Xcf" customClass="NewPlaceViewController" customModule="GeoPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rx2-1F-tEx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="16" maxY="0.0"/>
@@ -250,7 +268,7 @@
                             <outlet property="delegate" destination="DVM-cP-Xcf" id="VyL-w4-zGO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новое место" id="z8z-io-ZAJ">
+                    <navigationItem key="navigationItem" title="Новое место" largeTitleDisplayMode="always" id="z8z-io-ZAJ">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="jiA-ek-CYX">
                             <connections>
                                 <action selector="cancelAction:" destination="DVM-cP-Xcf" id="1oE-3X-xhL"/>
@@ -266,22 +284,22 @@
                         <outlet property="placeImage" destination="gME-5d-hy4" id="TpA-XC-ADK"/>
                         <outlet property="placeLocation" destination="5NM-nQ-UBU" id="X3o-9e-r7s"/>
                         <outlet property="placeName" destination="Fod-ot-PK9" id="i8h-xq-PKM"/>
-                        <outlet property="placeType" destination="KEw-Dm-fJW" id="bKS-GQ-yFW"/>
+                        <outlet property="placeType" destination="gXS-og-guf" id="pT9-3c-D3t"/>
                         <outlet property="saveButton" destination="tZy-9u-ohW" id="9Ff-wm-lO8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTy-RA-4MJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VMk-BL-zVf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2493.5999999999999" y="106.59670164917542"/>
+            <point key="canvasLocation" x="1606" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o9v-J2-WtH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hv4-AP-YIk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vdK-yR-PJD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vdK-yR-PJD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="26"/>
@@ -294,7 +312,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZe-CR-E3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57.971014492753625" y="107.8125"/>
+            <point key="canvasLocation" x="15" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YcE-B2-Jc1">
@@ -312,10 +330,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdK-ka-76N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="107"/>
+            <point key="canvasLocation" x="1606" y="-674"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon-camera" width="50" height="50"/>
+        <image name="sorting-down" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FIW-aX-Zpo"/>
+    </inferredMetricsTieBreakers>
 </document>
