@@ -73,6 +73,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.imageOfPlace.clipsToBounds = true
 
         return cell
+        
     }
     
     // MARK: Table view delegate
