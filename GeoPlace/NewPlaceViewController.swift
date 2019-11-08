@@ -22,7 +22,10 @@ class NewPlaceViewController: UITableViewController {
         super.viewDidLoad()
 
         // Скрываем остальные пустые ячейки футера tableView за счет UIView()
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: tableView.frame.size.width,
+                                                         height: 1))
         saveButton.isEnabled = false
         // Проверяем поле placeName на редактирование изменяя кнопку "Сохранить" с enabled на disabled через расширение типа UITextFieldDelegate
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)

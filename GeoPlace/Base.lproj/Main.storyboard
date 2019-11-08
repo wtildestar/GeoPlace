@@ -95,7 +95,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bHN-kV-ngN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ALo-lc-7YF"/>
-                            <constraint firstItem="bHN-kV-ngN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="E0O-WQ-IVk"/>
+                            <constraint firstItem="bHN-kV-ngN" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="E0O-WQ-IVk"/>
                             <constraint firstItem="bHN-kV-ngN" firstAttribute="top" secondItem="d3k-8a-Gg7" secondAttribute="bottom" constant="1" id="jKp-jy-e00"/>
                             <constraint firstItem="bHN-kV-ngN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zPS-UF-dBZ"/>
                         </constraints>
@@ -144,14 +144,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-camera" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gME-5d-hy4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                                    <rect key="frame" x="162.5" y="100" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="gME-5d-hy4" secondAttribute="trailing" id="Xev-EO-Skg"/>
-                                                <constraint firstAttribute="bottom" secondItem="gME-5d-hy4" secondAttribute="bottom" id="Z6a-SF-Sai"/>
-                                                <constraint firstItem="gME-5d-hy4" firstAttribute="top" secondItem="HPj-9M-gUV" secondAttribute="top" id="j8X-AN-kiZ"/>
-                                                <constraint firstItem="gME-5d-hy4" firstAttribute="leading" secondItem="HPj-9M-gUV" secondAttribute="leading" id="sgM-pV-toA"/>
+                                                <constraint firstItem="gME-5d-hy4" firstAttribute="centerY" secondItem="HPj-9M-gUV" secondAttribute="centerY" id="n32-IS-Of9"/>
+                                                <constraint firstItem="gME-5d-hy4" firstAttribute="centerX" secondItem="HPj-9M-gUV" secondAttribute="centerX" id="tQN-Dh-hhR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -260,6 +258,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="Xum-Kf-uz5">
+                                        <rect key="frame" x="0.0" y="503" width="375" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xum-Kf-uz5" id="Xnj-1X-3s9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w2f-ya-yWb" customClass="RatingControl" customModule="GeoPlace" customModuleProvider="target">
+                                                    <rect key="frame" x="61.5" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w2f-ya-yWb" firstAttribute="centerY" secondItem="Xnj-1X-3s9" secondAttribute="centerY" id="mIJ-VC-igN"/>
+                                                <constraint firstItem="w2f-ya-yWb" firstAttribute="centerX" secondItem="Xnj-1X-3s9" secondAttribute="centerX" id="pfS-vt-9Cy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -291,7 +306,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTy-RA-4MJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VMk-BL-zVf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="107"/>
+            <point key="canvasLocation" x="1605.5999999999999" y="106.59670164917542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o9v-J2-WtH">

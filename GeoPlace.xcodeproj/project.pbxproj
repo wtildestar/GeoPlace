@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6CA89B0FA732B977847333AD /* Pods_GeoPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60885A97720697E12F0C8051 /* Pods_GeoPlace.framework */; };
 		D70E54572372EC9400981A7C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E54562372EC9400981A7C /* StorageManager.swift */; };
+		D7627B0E2375681700552CF2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7627B0D2375681700552CF2 /* RatingControl.swift */; };
 		D7D2B65B236F3FCF0022F610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D2B65A236F3FCF0022F610 /* AppDelegate.swift */; };
 		D7D2B65D236F3FCF0022F610 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D2B65C236F3FCF0022F610 /* SceneDelegate.swift */; };
 		D7D2B65F236F3FCF0022F610 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D2B65E236F3FCF0022F610 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		3D21A162EA0443811B83846B /* Pods-GeoPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoPlace.release.xcconfig"; path = "Target Support Files/Pods-GeoPlace/Pods-GeoPlace.release.xcconfig"; sourceTree = "<group>"; };
 		60885A97720697E12F0C8051 /* Pods_GeoPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70E54562372EC9400981A7C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D7627B0D2375681700552CF2 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		D7D2B657236F3FCF0022F610 /* GeoPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D2B65A236F3FCF0022F610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D2B65C236F3FCF0022F610 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,11 +93,12 @@
 				D7D2B65A236F3FCF0022F610 /* AppDelegate.swift */,
 				D7D2B65C236F3FCF0022F610 /* SceneDelegate.swift */,
 				D7D2B65E236F3FCF0022F610 /* ViewController.swift */,
-				D7D2B66E2370A9E20022F610 /* OwnTableViewCell.swift */,
+				D7D2B6762371853F0022F610 /* NewPlaceViewController.swift */,
 				D7D2B6782371C0380022F610 /* PlaceModel.swift */,
 				D70E54562372EC9400981A7C /* StorageManager.swift */,
+				D7D2B66E2370A9E20022F610 /* OwnTableViewCell.swift */,
+				D7627B0D2375681700552CF2 /* RatingControl.swift */,
 				D7D2B660236F3FCF0022F610 /* Main.storyboard */,
-				D7D2B6762371853F0022F610 /* NewPlaceViewController.swift */,
 				D7D2B663236F3FD10022F610 /* Assets.xcassets */,
 				D7D2B665236F3FD10022F610 /* LaunchScreen.storyboard */,
 				D7D2B668236F3FD10022F610 /* Info.plist */,
@@ -222,6 +225,7 @@
 				D7D2B6792371C0380022F610 /* PlaceModel.swift in Sources */,
 				D7D2B65F236F3FCF0022F610 /* ViewController.swift in Sources */,
 				D70E54572372EC9400981A7C /* StorageManager.swift in Sources */,
+				D7627B0E2375681700552CF2 /* RatingControl.swift in Sources */,
 				D7D2B6772371853F0022F610 /* NewPlaceViewController.swift in Sources */,
 				D7D2B65B236F3FCF0022F610 /* AppDelegate.swift in Sources */,
 				D7D2B65D236F3FCF0022F610 /* SceneDelegate.swift in Sources */,
