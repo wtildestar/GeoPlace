@@ -62,7 +62,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!) // Извлекаем принудительно тк оно никогда не будет nil
-
+        cell.ratingControl.rating = Int(place.rating)
+        
         return cell
         
     }

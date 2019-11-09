@@ -16,6 +16,7 @@ class OwnTableViewCell: UITableViewCell {
             imageOfPlace.clipsToBounds = true
         }
     }
+    @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!

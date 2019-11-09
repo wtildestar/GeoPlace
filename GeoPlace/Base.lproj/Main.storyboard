@@ -34,34 +34,48 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="KC1-xm-fWq">
-                                                    <rect key="frame" x="96" y="8" width="263" height="69"/>
+                                                    <rect key="frame" x="96" y="8" width="183" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W9-07-hOk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="263" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="25"/>
                                                             <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-AE-Ubh">
-                                                            <rect key="frame" x="0.0" y="28" width="263" height="20"/>
+                                                            <rect key="frame" x="0.0" y="28" width="183" height="20"/>
                                                             <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMa-s7-fgq">
-                                                            <rect key="frame" x="0.0" y="51" width="263" height="18"/>
+                                                            <rect key="frame" x="0.0" y="51" width="183" height="18"/>
                                                             <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="OBA-Li-hou" customClass="RatingControl" customModule="GeoPlace" customModuleProvider="target">
+                                                    <rect key="frame" x="287" y="34.5" width="80" height="16"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="oTb-Qs-noW"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                                            <size key="value" width="16" height="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="OBA-Li-hou" firstAttribute="leading" secondItem="KC1-xm-fWq" secondAttribute="trailing" constant="8" id="08Y-xf-sgG"/>
+                                                <constraint firstAttribute="trailing" secondItem="OBA-Li-hou" secondAttribute="trailing" constant="8" id="2k5-7t-E1O"/>
+                                                <constraint firstItem="OBA-Li-hou" firstAttribute="centerY" secondItem="R1K-e7-jHG" secondAttribute="centerY" id="6He-5f-3yM"/>
                                                 <constraint firstItem="KC1-xm-fWq" firstAttribute="leading" secondItem="OyF-eL-eii" secondAttribute="trailing" constant="16" id="Fcd-3s-GAq"/>
                                                 <constraint firstItem="KC1-xm-fWq" firstAttribute="top" secondItem="R1K-e7-jHG" secondAttribute="top" constant="8" id="UUH-f3-Jbf"/>
                                                 <constraint firstAttribute="bottom" secondItem="KC1-xm-fWq" secondAttribute="bottom" constant="8" id="cVq-my-zLU"/>
-                                                <constraint firstAttribute="trailing" secondItem="KC1-xm-fWq" secondAttribute="trailing" constant="16" id="nG4-pN-Ctj"/>
                                                 <constraint firstItem="OyF-eL-eii" firstAttribute="leading" secondItem="R1K-e7-jHG" secondAttribute="leading" constant="15" id="nRs-3a-qrv"/>
                                                 <constraint firstItem="OyF-eL-eii" firstAttribute="centerY" secondItem="R1K-e7-jHG" secondAttribute="centerY" id="wF7-Vo-MaI"/>
                                             </constraints>
@@ -70,6 +84,7 @@
                                             <outlet property="imageOfPlace" destination="OyF-eL-eii" id="1jF-MZ-wGQ"/>
                                             <outlet property="locationLabel" destination="Zeu-AE-Ubh" id="qAa-AO-vpY"/>
                                             <outlet property="nameLabel" destination="5W9-07-hOk" id="Mmv-MG-4SR"/>
+                                            <outlet property="ratingControl" destination="OBA-Li-hou" id="YDg-C5-HHf"/>
                                             <outlet property="typeLabel" destination="VMa-s7-fgq" id="GFt-8p-coU"/>
                                             <segue destination="DVM-cP-Xcf" kind="show" identifier="showDetail" id="FIW-aX-Zpo"/>
                                         </connections>
