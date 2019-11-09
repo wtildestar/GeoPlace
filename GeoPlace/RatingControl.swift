@@ -17,6 +17,7 @@ import UIKit
     var rating = 0 {
         didSet {
             updateButtonSelectionState()
+            isUserInteractionEnabled = false
         }
     }
     
