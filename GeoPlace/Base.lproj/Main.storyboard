@@ -300,6 +300,7 @@
                         <outlet property="placeLocation" destination="5NM-nQ-UBU" id="X3o-9e-r7s"/>
                         <outlet property="placeName" destination="Fod-ot-PK9" id="i8h-xq-PKM"/>
                         <outlet property="placeType" destination="gXS-og-guf" id="pT9-3c-D3t"/>
+                        <outlet property="ratingControl" destination="w2f-ya-yWb" id="j6L-5P-Ypn"/>
                         <outlet property="saveButton" destination="tZy-9u-ohW" id="9Ff-wm-lO8"/>
                     </connections>
                 </tableViewController>
