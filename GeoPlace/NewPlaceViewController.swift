@@ -87,6 +87,19 @@ extension NewPlaceViewController: UITextFieldDelegate {
         }
     }
     
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+        
+        // Создали экземпляр MapViewController
+        let mapVC = segue.destination as! MapViewController
+        // Передаем currentPlace в mapViewContoller
+        mapVC.place = currentPlace
+    }
+    
     func savePlace() {
         
         var image: UIImage?
