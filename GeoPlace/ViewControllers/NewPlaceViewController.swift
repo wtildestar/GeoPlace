@@ -1,4 +1,3 @@
-//
 //  NewPlaceViewController.swift
 //  GeoPlace
 //
@@ -90,15 +89,22 @@ extension NewPlaceViewController: UITextFieldDelegate {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" { return }
+        // если получилось извлечь идентификатор сегвея и создать экземпляр класса mapVC то
+        guard
+            let identifier = segue.identifier,
+            let mapVC = segue.destination as? MapViewController
+            else { return }
+        // даем сегвею идентификатор входящего сегвея
+        mapVC.incomeSegueIdentifier = identifier
+        mapVC.mapViewControllerDelegate = self
         
-        // Создали экземпляр MapViewController
-        let mapVC = segue.destination as! MapViewController
-        // Передаю имя нового места в имя места MapViewController
-        mapVC.place.name = placeName.text!
-        mapVC.place.location = placeLocation.text
-        mapVC.place.type = placeType.text
-        mapVC.place.imageData = placeImage.image?.pngData()
+        if identifier == "showPlace" {
+            // Передаю имя нового места в имя места MapViewController
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = placeImage.image?.pngData()
+        }
     }
     
     func savePlace() {
@@ -189,4 +195,12 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true)
         
     }
+}
+
+extension NewPlaceViewController: MapViewControllerDelegate {
+    
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+    }
+
 }
