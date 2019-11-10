@@ -90,26 +90,21 @@ extension NewPlaceViewController: UITextFieldDelegate {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" {
-            return
-        }
+        if segue.identifier != "showMap" { return }
         
         // Создали экземпляр MapViewController
         let mapVC = segue.destination as! MapViewController
-        // Передаем currentPlace в mapViewContoller
-        mapVC.place = currentPlace
+        // Передаю имя нового места в имя места MapViewController
+        mapVC.place.name = placeName.text!
+        mapVC.place.location = placeLocation.text
+        mapVC.place.type = placeType.text
+        mapVC.place.imageData = placeImage.image?.pngData()
     }
     
     func savePlace() {
         
-        var image: UIImage?
         // Пишем условие на ImagePlaceholder если пользователь (не)установил изображение
-        if imageIsChanged {
-            image = placeImage.image
-        } else { // Иначе ставим ImagePlaceholder
-            image = #imageLiteral(resourceName: "image-placeholder")
-        }
-        
+        let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "image-placeholder")
         let imageData = image?.pngData()
         
         let newPlace = Place(name: placeName.text!,
